@@ -179,13 +179,18 @@ function disqusSignon(user) {
      */
     var message = new Base64.encode(disqusStr);
 
+    console.log('message = ' + message);
+    
     /* 
      * CryptoJS is required for hashing (included in dir)
      * https://code.google.com/p/crypto-js/
      */
     var result = CryptoJS.HmacSHA1(message + " " + timestamp, DISQUS_SECRET);
+    console.log('result = ' + result);
     var hexsig = CryptoJS.enc.Hex.stringify(result);
-
+    console.log('hexsig = ' + hexsig);
+    
+    console.log(message + " " + hexsig + " " + timestamp);
     return message + " " + hexsig + " " + timestamp;
 }
 

@@ -64,7 +64,7 @@ var auth = disqusSignon({id: '123456', username: 'Some Evidentia User', email: '
 var disqus_config = function () {
     console.log('auth config setup');
     this.page.remote_auth_s3 = auth;
-    this.page.api_key = 'public_api_key';
+    this.page.api_key = DISQUS_PUBLIC;
 }
 
     </script>

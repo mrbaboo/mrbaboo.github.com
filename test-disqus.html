@@ -16,11 +16,15 @@ g)-899497514);l=g;g=h;h=j<<30|j>>>2;j=n;n=c}b[0]=b[0]+n|0;b[1]=b[1]+j|0;b[2]=b[2
 this._hasher;e=d.finalize(e);d.reset();return d.finalize(this._oKey.clone().concat(e))}})})();
     </script>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="https://raw.githubusercontent.com/carhartl/jquery-cookie/v1.4.1/jquery.cookie.js"></script>
-    <script src="https://raw.githubusercontent.com/carlo/jquery-base64/master/jquery.base64.min.js"></script>
+    <script src="javascript/jquery.cookie.js"></script>
+    <script src="javascript/jquery.base64.min.js"></script>
     <script type="text/javascript">
 
-var DISQUS_SECRET = document.cookieprompt("SSO secret key for this site");
+if ($.cookie('key') === '') {
+    $.cookie('key', prompt("SSO secret key for this site"));
+}
+
+var DISQUS_SECRET = $.cookie('key');
 var DISQUS_PUBLIC = "qTa1E4LIy6jRefin0R3ch4g1XV87snRM8hg26Eo66VEnEFZWl0ezLbGdlvEH0Jbx";
 
 function disqusSignon(user) {

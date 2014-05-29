@@ -20,7 +20,7 @@ this._hasher;e=d.finalize(e);d.reset();return d.finalize(this._oKey.clone().conc
     <script src="javascripts/jquery.base64.min.js"></script>
     <script type="text/javascript">
 
-if ($.cookie('key') === '') {
+if (typeof $.cookie('key') === 'undefined') {
     $.cookie('key', prompt("SSO secret key for this site"));
 }
 

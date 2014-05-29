@@ -194,8 +194,9 @@ function disqusSignon(user) {
     return message + " " + hexsig + " " + timestamp;
 }
 
+var auth = disqusSignon({id: '123456', username: 'Some Evidentia User', email: 'jmuth@evidentiapublishing.com'});
 var disqus_config = function () {
-    this.page.remote_auth_s3 = disqusSignon({id: '123456', username: 'Some Evidentia User', email: 'jmuth@evidentiapublishing.com'});
+    this.page.remote_auth_s3 = auth;
     this.page.api_key = 'public_api_key';
 }
 
